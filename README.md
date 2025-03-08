@@ -7,7 +7,7 @@ Template for [hugo-theme-reimu](https://github.com/D-Sketon/hugo-theme-reimu)
 ## Usage
 
 ```bash
-git clone https://github.com/D-Sketon/hugo-reimu-template
+git clone https://github.com/D-Sketon/hugo-reimu-template --recursive
 cd hugo-reimu-template
 hugo serve
 ```
