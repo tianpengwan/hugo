@@ -47,6 +47,15 @@ banner_srcset:
 
 avatar: "avatar.webp"
 
+# Control the display of the post cover
+# If not set, the banner image will be displayed by default
+# Its priority is lower than the cover in the Front-matter
+cover: # https://example.com / false / rgb(255,117,117)
+
+# Control the display of the post toc
+# Its priority is lower than the toc in the Front-matter
+toc: true
+
 # Open Graph
 open_graph:
   enable: true
@@ -134,6 +143,9 @@ category_limits: 10
 tag_limits: 10
 recent_posts_limits: 5
 tagcloud_limits: 20
+
+# Archive behavior
+only_show_capsule_in_index: false # If you have hugo amounts of tags and categories, you can set this to true to only show the capsule in the index page for better performance
 
 ########################################
 # CSS
@@ -233,6 +245,15 @@ math:
 ########################################
 # Comment system
 ########################################
+
+# global control of the comment system
+# you can use multiple comment systems at the same time
+# load order: localStorage(user manually selects) -> default
+# -> valine -> waline -> twikoo -> gitalk -> giscus
+comment:
+  # comment system title
+  title: 说些什么吧！
+  default: waline # default comment system, when you enable multiple comment systems
 
 # valine comment system. https://valine.js.org
 # version 1.5.1
@@ -365,7 +386,7 @@ firework:
       - shape: circle
         move: ["emit"]
         easing: easeOutExpo
-        colors: ["#ff5252", "#ff7c7c", "#ffafaf", "#ffd0d0"]
+        colors: ["var(--red-1)", "var(--red-2)", "var(--red-3)", "var(--red-4)"]
         number: 20
         duration: [1200, 1800]
         shapeOptions:
@@ -374,7 +395,7 @@ firework:
       - shape: circle
         move: ["diffuse"]
         easing: easeOutExpo
-        colors: ["#ff0000"]
+        colors: ["var(--red-0)"]
         number: 1
         duration: [1200, 1800]
         shapeOptions:
@@ -527,3 +548,23 @@ player:
       server: netease
       type: playlist
       auto:
+
+########################################
+# pangu.js
+########################################
+
+pangu:
+  # more information: https://github.com/vinta/pangu.js 
+  enable: false  # enable pangu.js to add space between Chinese and English
+
+########################################
+# Material Theme
+########################################
+
+# experimental, may have a lot of bugs, open with caution!
+# A dynamic color generation tool based on Google's Material You design guidelines, capable of extracting primary colors from any image and generating complete light and dark color schemes.
+material_theme:
+  # more information: https://github.com/2061360308/material-theme
+  # notice: when you enable this feature, all the covers will be automatically added "crossorigin" attribute to support the dynamic color scheme
+  # so make sure your custom covers will not be blocked by the browser's CORS policy
+  enable: false # enable material_theme to generate dynamic color schemes based on the banner image
