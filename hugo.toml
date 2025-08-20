@@ -3,6 +3,9 @@ languageCode = 'en'
 title = 'My New Hugo Site'
 theme = 'hugo-theme-reimu'
 
+# ↓↓↓ 这里是修改的关键 ↓↓↓
+newContentEditor = "content/blog"  # 使用直接赋值格式
+
 defaultContentLanguage = 'zh-CN'
 [languages]
 [languages.en]
@@ -38,7 +41,3 @@ baseName = "algolia"
 isPlainText = true
 mediaType = "application/json"
 notAlternative = true
-
-# ↓↓↓ 新增的默认文章目录配置 ↓↓↓
-[newContentEditor]
-  path = "content/blog"  # 修改这里即可
