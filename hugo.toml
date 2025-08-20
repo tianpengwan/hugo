@@ -3,17 +3,18 @@ languageCode = 'en'
 title = 'My New Hugo Site'
 theme = 'hugo-theme-reimu'
 
-newContentEditor = "content/posts"  # 使用直接赋值格式
+newContentEditor = "content/blog"  # 使用直接赋值格式
 
 # ===== 修正后的配置 =====
-paginate = 10  # 直接指定分页数量（整数）
+[pagination]
+  pagerSize = 10  # 使用新的分页配置
 
 [params]
   # 指定在首页显示的内容类型
-  mainSections = ["posts"]  # 必须与 newContentEditor 的目录名一致
+  mainSections = ["blog"]  # 必须与 newContentEditor 的目录名一致
 
 [frontmatter]
-  defaultContentType = "posts"  # 与 mainSections 匹配
+  defaultContentType = "blog"  # 与 mainSections 匹配
 # =====================
 
 defaultContentLanguage = 'zh-CN'
